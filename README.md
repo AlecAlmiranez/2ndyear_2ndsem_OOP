@@ -1,2 +1,2 @@
-# OOP_Finals_Employee_Deliverables_System
-2nd year 2nd semester final project in Object Oriented Programming
+# COMP009_BSIT2-1_ALMIRANEZ_ALEC_GODWIN REPOSITORY
+ACADEMIC YEAR 2023 - 2024
