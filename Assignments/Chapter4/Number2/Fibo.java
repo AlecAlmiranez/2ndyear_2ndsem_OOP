@@ -18,9 +18,15 @@ public class Fibo {
         } else {
             numberRepresentation = new NumberWords(); // Creating new instance
         }
+        if (elem == 1) {
+            System.out.print(numberRepresentation.convertNumber(i) + ", ");
+        } else if (elem == 2) {
+            System.out.print(numberRepresentation.convertNumber(i) + ", ");
+        } else {
+            System.out.print(numberRepresentation.convertNumber(i) + ", ");
+            System.out.print(numberRepresentation.convertNumber(j) + ", ");
 
-        System.out.print(numberRepresentation.convertNumber(i) + ", ");
-        System.out.print(numberRepresentation.convertNumber(j) + ", ");
+        }
 
         for (int counter = 1; counter < elem; counter++) {
             k = i + j;
