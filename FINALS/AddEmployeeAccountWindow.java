@@ -8,6 +8,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+/**
+ *
+ * @author Alec
+ */
 public class AddEmployeeAccountWindow extends JFrame {
     private JTextField nameField;
     private JTextField employeeNumberField;
@@ -17,6 +21,12 @@ public class AddEmployeeAccountWindow extends JFrame {
     private Connection connection;
     private AdminDashboard adminDashboard;
 
+    /**
+     * Popup window for when adding a new employee
+     * Inherits connection from admin dashboard
+     * @param connection
+     * @param adminDashboard
+     */
     public AddEmployeeAccountWindow(Connection connection, AdminDashboard adminDashboard) {
         this.connection = connection;
         this.adminDashboard = adminDashboard;
