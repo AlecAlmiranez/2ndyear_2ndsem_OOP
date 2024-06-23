@@ -6,6 +6,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.*;
 
+/**
+ *
+ * @author Alec
+ */
 public class RecoverAccount extends JFrame {
     private Connection connection;
     private JTextField employeeNumField;
@@ -14,6 +18,10 @@ public class RecoverAccount extends JFrame {
     private JTextArea accountDetailsArea;
     private JPanel panel;
     
+    /**
+     * Creates a new jframe for account recovery
+     * @throws SQLException
+     */
     public RecoverAccount() throws SQLException {
         final String url = "jdbc:mysql://localhost:3306/db_employeedeliverables";
         final String user = "root";
@@ -144,6 +152,10 @@ public class RecoverAccount extends JFrame {
         }
     }
 
+    /**
+     * Main method used for debugging
+     * @param args
+     */
     public static void main(String[] args) { // Debugging
         SwingUtilities.invokeLater(() -> {
             try {
