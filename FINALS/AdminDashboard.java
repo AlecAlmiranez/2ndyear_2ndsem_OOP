@@ -10,6 +10,10 @@ import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ *
+ * @author Alec
+ */
 public class AdminDashboard extends JFrame {
 
     private Connection connection;
@@ -18,6 +22,12 @@ public class AdminDashboard extends JFrame {
     private JButton addEmployeeButton;
     private boolean ifDeliverables = false;
 
+    /**
+     * Opens the AdminDashboard using the admin name in the record
+     * @param adminName
+     * @param username
+     * @throws SQLException
+     */
     public AdminDashboard(String adminName, String username) throws SQLException {
         final String url = "jdbc:mysql://localhost:3306/db_employeedeliverables";
         final String user = "root";
@@ -358,6 +368,10 @@ public class AdminDashboard extends JFrame {
         }
     }
 
+    /**
+     * Main method used for debugging the system
+     * @param args
+     */
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             try {
