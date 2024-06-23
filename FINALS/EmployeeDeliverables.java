@@ -5,8 +5,15 @@ import java.awt.*;
 import java.awt.event.*;
 import java.sql.*;
 
+/**
+ *
+ * @author Alec
+ */
 public class EmployeeDeliverables extends JFrame {
 
+    /**
+     * Launches GUI/Login GUI
+     */
     public static void launchGUI() {
         EventQueue.invokeLater(new Runnable() {
             @Override
@@ -150,6 +157,11 @@ public class EmployeeDeliverables extends JFrame {
         setLocationRelativeTo(null); // Center the frame on the screen
     }
 
+    /**
+     *
+     * @param args
+     * @throws SQLException
+     */
     public static void main(String[] args) throws SQLException {
         launchGUI(); // Call launchGUI to start the GUI
     }
