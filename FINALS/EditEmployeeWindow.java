@@ -6,6 +6,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.*;
 
+/**
+ *
+ * @author Alec
+ */
 public class EditEmployeeWindow extends JFrame {
     private final Connection connection;
     private JTextField nameField = new JTextField(20);
@@ -13,7 +17,11 @@ public class EditEmployeeWindow extends JFrame {
     private JTextField emailField = new JTextField(20);
     private JTextField recoveryField = new JTextField(20);
 
-
+    /**
+     * 
+     * @param employeeNum - from employee table
+     * @throws SQLException
+     */
     public EditEmployeeWindow(String employeeNum) throws SQLException {
         final String url = "jdbc:mysql://localhost:3306/db_employeedeliverables";
         final String user = "root";
@@ -111,6 +119,10 @@ public class EditEmployeeWindow extends JFrame {
         }
     }
 
+    /**
+     * Main method used for debugging
+     * @param args
+     */
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             try {
