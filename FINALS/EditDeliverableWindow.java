@@ -8,6 +8,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+/**
+ * 
+ * @author Alec
+ */
 public class EditDeliverableWindow extends JFrame {
     private JTextField linkToFileField;
     private JTextField dateAndTimeField;
@@ -17,6 +21,14 @@ public class EditDeliverableWindow extends JFrame {
     private Connection connection;
     private AdminDashboard adminDashboard;
 
+    /**
+     * 
+     * @param employeeNum - From deliverables table
+     * @param linkToFile - From deliverables table
+     * @param dateAndTime - From deliverables table
+     * @param connection - Inherit connection from admin dashboard
+     * @param adminDashboard
+     */
     public EditDeliverableWindow(int employeeNum, String linkToFile, String dateAndTime, Connection connection, AdminDashboard adminDashboard) {
         this.employeeNum = employeeNum;
         this.originalFileName = linkToFile;
