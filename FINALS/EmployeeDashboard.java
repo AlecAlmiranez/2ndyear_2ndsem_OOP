@@ -15,9 +15,19 @@ import java.sql.Timestamp;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ *
+ * @author Alec
+ */
 public class EmployeeDashboard extends EmployeeDeliverables {
     private File selectedFile;
 
+    /**
+     * Uses the employeeName from the record to create a new jframe with the passed variables
+     * @param employeeName
+     * @param username
+     * @throws SQLException
+     */
     public EmployeeDashboard(String employeeName, String username) throws SQLException {
         final String url = "jdbc:mysql://localhost:3306/db_employeedeliverables";
         final String user = "root";
@@ -119,6 +129,10 @@ public class EmployeeDashboard extends EmployeeDeliverables {
         setLocationRelativeTo(null);
     }
 
+    /**
+     * Main Method used for debugging purposes
+     * @param args
+     */
     public static void main(String[] args) {
         // Debugging
         SwingUtilities.invokeLater(() -> {
