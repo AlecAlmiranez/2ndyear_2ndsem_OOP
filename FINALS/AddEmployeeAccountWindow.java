@@ -37,23 +37,28 @@ public class AddEmployeeAccountWindow extends JFrame {
         setLayout(new GridLayout(6, 2, 10, 10));
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-        add(new JLabel("Name:"));
+        JLabel nameLabel = new JLabel("Name:");
+        add(nameLabel);
         nameField = new JTextField();
         add(nameField);
-
-        add(new JLabel("Employee Number:"));
+        
+        JLabel employeeNumLabel = new JLabel("Employee Number:");
+        add(employeeNumLabel);
         employeeNumberField = new JTextField();
         add(employeeNumberField);
-
-        add(new JLabel("Password:"));
+        
+        JLabel passwordLabel = new JLabel("Password:");
+        add(passwordLabel);
         passwordField = new JTextField();
         add(passwordField);
-
-        add(new JLabel("Email:"));
+        
+        JLabel emailLabel = new JLabel("Email:");
+        add(emailLabel);
         emailField = new JTextField();
         add(emailField);
-
-        add(new JLabel("Recovery:"));
+        
+        JLabel recoveryLabel = new JLabel("Recovery:");
+        add(recoveryLabel);
         recoveryField = new JTextField();
         add(recoveryField);
 
