@@ -7,6 +7,8 @@ import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  *
@@ -27,7 +29,7 @@ public class AddEmployeeAccountWindow extends JFrame {
      * @param connection
      * @param adminDashboard
      */
-    public AddEmployeeAccountWindow(Connection connection, AdminDashboard adminDashboard) {
+    public  AddEmployeeAccountWindow(Connection connection, AdminDashboard adminDashboard) {
         this.connection = connection;
         this.adminDashboard = adminDashboard;
 
@@ -36,7 +38,7 @@ public class AddEmployeeAccountWindow extends JFrame {
         setLocationRelativeTo(null);
         setLayout(new GridLayout(6, 2, 10, 10));
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
+        
         JLabel nameLabel = new JLabel("Name:");
         add(nameLabel);
         nameField = new JTextField();
@@ -67,9 +69,13 @@ public class AddEmployeeAccountWindow extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    addEmployeeAccount();
-                    adminDashboard.loadEmployeeData(); // Reload employee data in AdminDashboard
-                    dispose(); // Close the window after adding
+                    if (isValidEmail(emailField.getText())) {
+                        addEmployeeAccount();
+                        adminDashboard.loadEmployeeData(); // Reload employee data in AdminDashboard
+                        dispose(); // Close the window after adding
+                    } else {
+                        JOptionPane.showMessageDialog(AddEmployeeAccountWindow.this, "Invalid email address.");
+                    }
                 } catch (SQLException ex) {
                     ex.printStackTrace();
                     JOptionPane.showMessageDialog(AddEmployeeAccountWindow.this, "Failed to add employee account.");
@@ -89,5 +95,12 @@ public class AddEmployeeAccountWindow extends JFrame {
             statement.setInt(5, Integer.parseInt(recoveryField.getText()));
             statement.executeUpdate();
         }
+    }
+
+    private boolean isValidEmail(String email) {
+        String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
+        Pattern pattern = Pattern.compile(emailRegex);
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
     }
 }
