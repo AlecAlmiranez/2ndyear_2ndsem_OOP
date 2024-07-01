@@ -53,7 +53,7 @@ public class EmployeeDashboard extends EmployeeDeliverables {
         inputArea.setWrapStyleWord(true);
 
         // File chooser button
-        JButton chooseFileButton = new JButton("Choose PDF to upload");
+        JButton chooseFileButton = new JButton("Choose file to upload");
         chooseFileButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
